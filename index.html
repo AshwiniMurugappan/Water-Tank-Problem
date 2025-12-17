@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Water Tank Problem</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="light-theme">
+    <div class="header-controls">
+        <button id="themeToggle" onclick="toggleTheme()">🌙 Click here for Dark Mode</button>
+    </div>
+    <h1>Water Tank Dashboard</h1>
+    <div id="instructionBox" class="info-card">
+        <h3>How it Works</h3>
+        <p>The Water Tank Problem calculates how much rainwater can be trapped between blocks of varying heights. Using the <span class="badge">O(n)</span> two-pointer algorithm, we find the water level at each position by tracking the maximum heights from both left and right sides.</p>
+
+        <div class="example-block"></div>
+            <p><strong>Example:</strong> Try <code>0,4,0,0,0,6,0,6,4,0</code> to see 18 units of water trapped.</p>
+        </div>
+    </div>
+    <div class="input-section">
+        <label for="inputArray">Enter Block Heights (comma-separated):</label>
+        <input type="text" id="inputArray" value="0,4,0,0,0,6,0,6,4,0">
+        <button onclick="calculateAndVisualize()">Calculate Water</button>
+    </div>
+
+    <div id="legend" class="hidden">
+        <div class="legend-item"><span class="box wall"></span> Wall</div>
+        <div class="legend-item"><span class="box water"></span> Trapped Water</div>
+    </div>
+    
+    <div id="visualizationContainer">
+        </div>
+    
+    <p id="resultText" class="hidden">Total Water Trapped: <strong id="outputUnits">0</strong> Units</p>
+
+
+    <div class="history-section">
+        <h3>Recent Calculations</h3>
+        <ul id="historyList"></ul>
+    </div>
+
+    <div id="tooltip" class="hidden"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
