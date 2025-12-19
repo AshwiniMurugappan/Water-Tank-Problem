@@ -2,7 +2,7 @@ function calculateAndVisualize() {
     const inputStr = document.getElementById('inputArray').value;
     if (!inputStr) return alert("Please enter some values!");
 
-    // 1. Hide instructions, show results and legend
+    // Hide instructions, show results and legend
     document.getElementById('instructionBox').classList.add('hidden');
     document.getElementById('legend').classList.remove('hidden');
     document.getElementById('resultText').classList.remove('hidden');
@@ -10,7 +10,7 @@ function calculateAndVisualize() {
     // Convert string "0,4,0..." to array [0, 4, 0...]
     const heights = inputStr.split(',').map(num => parseInt(num.trim()));
 
-    // 1. Calculate the trapping water levels
+    // Calculate the trapping water levels
     const n = heights.length;
     const leftMax = new Array(n).fill(0);
     const rightMax = new Array(n).fill(0);
@@ -33,7 +33,7 @@ function calculateAndVisualize() {
     // Update the UI text
     document.getElementById('outputUnits').textContent = totalWater;
 
-    // 2. Call the SVG Generator
+    // Call the SVG Generator
     renderSVG(heights, waterLevels);
 }
 
@@ -158,4 +158,5 @@ function showTooltip(event, index, height, water) {
 
 function hideTooltip() {
     document.getElementById('tooltip').classList.add('hidden');
+
 }
